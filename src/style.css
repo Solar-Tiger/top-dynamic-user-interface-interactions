@@ -1,3 +1,13 @@
 body {
-  background-color: #ddd;
+    background-color: #ddd;
+}
+
+.dropdown-menu-container {
+    & button {
+        border: none;
+    }
+}
+
+.hidden {
+    visibility: hidden;
 }
