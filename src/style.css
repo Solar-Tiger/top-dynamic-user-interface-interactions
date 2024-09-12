@@ -2,6 +2,11 @@ body {
     background-color: #ddd;
 }
 
+.all-dropdown-menus-container {
+    display: flex;
+    align-items: flex-start;
+}
+
 .dropdown-menu-container {
     display: inline-block;
     padding: 0.5rem;
