@@ -1,13 +1,14 @@
 import './style.css';
 import './reset.css';
 
-const dropdownBtn = document.querySelector('#dropdown-button');
-const dropdownContainer = document.querySelector('#dropdown-container');
+const dropdownBtn = document.querySelectorAll('#dropdown-button');
 
-dropdownBtn.addEventListener('click', () => {
-    dropdownContainer.classList.toggle('hidden');
-});
+const toggleDropdownVisibility = (btn, className) => {
+    btn.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            e.target.nextElementSibling.classList.toggle(className);
+        });
+    });
+};
 
-dropdownContainer.addEventListener('click', (e) => {
-    console.log(e.target);
-});
+toggleDropdownVisibility(dropdownBtn, 'hidden');
