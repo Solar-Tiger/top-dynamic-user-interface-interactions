@@ -1,14 +1,32 @@
 import './style.css';
 import './reset.css';
 
-const dropdownBtn = document.querySelectorAll('#dropdown-button');
+const dropdownBtns = document.querySelectorAll('#dropdown-button');
 
 const toggleDropdownVisibility = (btn, className) => {
     btn.forEach((button) => {
         button.addEventListener('click', (e) => {
-            e.target.nextElementSibling.classList.toggle(className);
+            e.preventDefault();
+
+            const dropdownContainerClass =
+                e.target.nextElementSibling.classList;
+
+            if (dropdownContainerClass.contains(className)) {
+                collapseAllDropdowns(btn, className);
+                dropdownContainerClass.remove(className);
+            } else {
+                dropdownContainerClass.add(className);
+            }
         });
     });
 };
 
-toggleDropdownVisibility(dropdownBtn, 'hidden');
+const collapseAllDropdowns = (dropdownBtns, elClassName) => {
+    dropdownBtns.forEach((button) => {
+        if (!button.nextElementSibling.classList.contains(elClassName)) {
+            button.nextElementSibling.classList.add(elClassName);
+        }
+    });
+};
+
+toggleDropdownVisibility(dropdownBtns, 'hidden');
