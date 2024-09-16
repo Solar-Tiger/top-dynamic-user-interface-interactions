@@ -8,23 +8,45 @@ const toggleDropdownVisibility = (btn, className) => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
 
-            const dropdownContainerClass =
-                e.target.nextElementSibling.classList;
+            const dropdownContainer = e.target.nextElementSibling;
 
-            if (dropdownContainerClass.contains(className)) {
+            if (dropdownContainer.classList.contains(className)) {
                 collapseAllDropdowns(btn, className);
-                dropdownContainerClass.remove(className);
+                dropdownContainer.classList.remove(className);
             } else {
-                dropdownContainerClass.add(className);
+                dropdownContainer.classList.add(className);
             }
         });
     });
+
+    collapseAllDropdownsOutside(btn, className);
 };
 
 const collapseAllDropdowns = (dropdownBtns, elClassName) => {
     dropdownBtns.forEach((button) => {
         if (!button.nextElementSibling.classList.contains(elClassName)) {
             button.nextElementSibling.classList.add(elClassName);
+        }
+    });
+};
+
+const collapseAllDropdownsOutside = (
+    dropdownBtn,
+    dropdownContainerClassName
+) => {
+    function openDropdown() {
+        dropdownBtn.classList.contains(dropdownContainerClassName);
+    }
+
+    dropdownBtn.some(openDropdown());
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('dropdown-button')) {
+            dropdownBtn.forEach((btn) => {
+                btn.nextElementSibling.classList.add(
+                    dropdownContainerClassName
+                );
+            });
         }
     });
 };
