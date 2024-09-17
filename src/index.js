@@ -6,7 +6,7 @@ const dropdownBtns = document.querySelectorAll('#dropdown-button');
 const toggleDropdownVisibility = (btn, className) => {
     btn.forEach((button) => {
         button.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.stopPropagation();
 
             const dropdownContainer = e.target.nextElementSibling;
 
@@ -34,14 +34,8 @@ const collapseAllDropdownsOutside = (
     dropdownBtn,
     dropdownContainerClassName
 ) => {
-    function openDropdown() {
-        dropdownBtn.classList.contains(dropdownContainerClassName);
-    }
-
-    dropdownBtn.some(openDropdown());
-
     document.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('dropdown-button')) {
+        if (!e.target.closest('div')) {
             dropdownBtn.forEach((btn) => {
                 btn.nextElementSibling.classList.add(
                     dropdownContainerClassName
