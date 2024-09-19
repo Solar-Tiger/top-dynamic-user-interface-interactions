@@ -35,27 +35,19 @@ const collapseAllDropdownsOutside = (
     dropdownContainerClassName
 ) => {
     document.addEventListener('click', (e) => {
-        // if (!e.target.closest('div')) {
-        //     dropdownBtn.forEach((btn) => {
-        //         btn.nextElementSibling.classList.add(
-        //             dropdownContainerClassName
-        //         );
-        //     });
-        // }
+        function checkIfParentContainer(parentContainer) {
+            return parentContainer.parentNode.contains(e.target);
+        }
 
-        dropdownBtn.forEach((btn) => {
-            const btnContainer = btn.parentNode;
+        const arrDropdownBtn = Array.from(dropdownBtn);
 
-            console.log(e.target.parentNode.parentNode);
-
-            if (btnContainer.contains(e.target.parentNode.parentNode)) {
-                console.log(e.target.parentNode.parentNode);
-                console.log(btn);
-            } else {
-                console.log('NOT THE TARGET');
-                console.log(btn);
-            }
-        });
+        if (!arrDropdownBtn.some(checkIfParentContainer)) {
+            dropdownBtn.forEach((dropdown) => {
+                dropdown.nextElementSibling.classList.add(
+                    dropdownContainerClassName
+                );
+            });
+        }
     });
 };
 
