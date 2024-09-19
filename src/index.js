@@ -35,9 +35,9 @@ const collapseAllDropdownsOutside = (
     dropdownContainerClassName
 ) => {
     document.addEventListener('click', (e) => {
-        function checkIfParentContainer(parentContainer) {
+        const checkIfParentContainer = (parentContainer) => {
             return parentContainer.parentNode.contains(e.target);
-        }
+        };
 
         const arrDropdownBtn = Array.from(dropdownBtn);
 
