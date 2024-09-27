@@ -52,3 +52,5 @@ const collapseAllDropdownsOutside = (
 };
 
 toggleDropdownVisibility(dropdownBtns, 'hidden');
+
+export { toggleDropdownVisibility };
