@@ -1,8 +1,8 @@
 {
-    "name": "vscode-projects",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "name": "@solar_tiger/toggle-dropdown-menu",
+    "version": "0.0.1",
+    "description": "Add dropdown toggle functionality to all dropdown menus that share a class name. This is intended for eeducational and learning purposes and may contain errors (Part of The Odin Project: Dynamic User Interface Practice)",
+    "main": "./src/index.js",
     "scripts": {
         "watch": "webpack serve --open --config webpack.dev.js",
         "devbuild": "webpack --config webpack.dev.js",
@@ -10,12 +10,22 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Solar-Tiger/webpack-template"
+        "url": "https://github.com/Solar-Tiger/top-dynamic-user-interface-interactions"
     },
-    "keywords": [],
+    "keywords": [
+        "The Odin Project",
+        "dropdown",
+        "learning",
+        "experiment"
+    ],
     "author": "",
     "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Solar-Tiger/top-dynamic-user-interface-interactions/issues"
+    },
+    "homepage": "https://github.com/Solar-Tiger/top-dynamic-user-interface-interactions/blob/main/README.md",
     "devDependencies": {
+        "css-loader": "^7.1.2",
         "eslint": "^8.24.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-airbnb-base": "^15.0.0",
@@ -23,13 +33,12 @@
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-prettier": "^4.2.1",
-        "prettier": "^2.7.1",
-        "css-loader": "^7.1.2",
         "html-webpack-plugin": "^5.6.0",
+        "prettier": "^2.7.1",
         "style-loader": "^4.0.0",
-        "webpack": "^5.91.0",
+        "webpack": "^5.95.0",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^5.0.4",
+        "webpack-dev-server": "^5.1.0",
         "webpack-merge": "^5.10.0"
     }
 }
