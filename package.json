@@ -1,6 +1,6 @@
 {
     "name": "@solar_tiger/toggle-dropdown-menu",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Add dropdown toggle functionality to all dropdown menus that share a class name. This is intended for eeducational and learning purposes and may contain errors (Part of The Odin Project: Dynamic User Interface Practice)",
     "main": "./src/index.js",
     "scripts": {
