@@ -1,6 +1,7 @@
 dist
 .eslintrc.json
 .prettierrc
+test
 
 webpack.common.js
 webpack.dev.js
