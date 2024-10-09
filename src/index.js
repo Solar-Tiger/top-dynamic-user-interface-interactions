@@ -1,7 +1,7 @@
-import './style.css';
-import './reset.css';
+// import './style.css';
+// import './reset.css';
 
-const dropdownBtns = document.querySelectorAll('.dropdown-button');
+// const dropdownBtns = document.querySelectorAll('.dropdown-button');
 
 const toggleDropdownVisibility = (btn, className) => {
     btn.forEach((button) => {
@@ -51,6 +51,6 @@ const collapseAllDropdownsOutside = (
     });
 };
 
-toggleDropdownVisibility(dropdownBtns, 'hidden');
+// toggleDropdownVisibility(dropdownBtns, 'hidden');
 
 export default toggleDropdownVisibility;
